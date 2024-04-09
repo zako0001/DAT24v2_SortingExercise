@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class SortPeople {
     public static void main(String[] args) {
         Person[] people = {
@@ -13,9 +15,16 @@ public class SortPeople {
             System.out.println(person);
         }
 
-        // skriv kode herunder
+        System.out.println();
 
+        Arrays.stream(people)
+                .sorted()
+                .forEach(System.out::println);
+
+        System.out.println();
+
+        Arrays.stream(people)
+                .sorted(Person.LAST_NAME_COMPARATOR)
+                .forEach(System.out::println);
     }
-
-
 }
